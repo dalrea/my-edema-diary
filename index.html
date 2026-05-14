@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 부종일기 — 림프부종 환자의 따뜻한 관리 일기</title>
+    <meta name="description" content="림프부종 환자의 몸과 마음을 함께 돌보는 쉬운 관리 일기">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 상단 헤더 -->
+    <header class="site-header" role="banner">
+        <div class="container header-inner">
+            <a href="#" class="logo" aria-label="나의 부종일기 홈">
+                <span class="logo-mark" aria-hidden="true">🌿</span>
+                <span class="logo-text">나의 부종일기</span>
+            </a>
+            <nav class="site-nav" aria-label="주요 메뉴">
+                <a href="#record">기록하기</a>
+                <a href="#graph">관리 그래프</a>
+                <a href="#features">기능 소개</a>
+                <a href="#ai">AI 도우미</a>
+                <a href="#community">커뮤니티</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container hero-inner">
+                <div class="hero-text">
+                    <p class="eyebrow">림프부종 자가관리 도우미</p>
+                    <h1 id="hero-title">나의 부종일기</h1>
+                    <p class="lede">림프부종 환자의 몸과 마음을 함께 돌보는 쉬운 관리 일기</p>
+                    <p class="hero-desc">
+                        오늘의 부종, 운동, 압박, 수면, 마음 상태를 기록하고<br>
+                        내 몸의 변화를 한눈에 확인하세요.
+                    </p>
+                    <div class="cta-group">
+                        <button type="button" class="btn btn-primary" data-scroll-to="record">
+                            오늘 기록하기
+                        </button>
+                        <button type="button" class="btn btn-secondary" data-scroll-to="graph">
+                            관리 그래프 보기
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 앱 화면 미리보기 mockup -->
+                <div class="hero-mockup" aria-hidden="true">
+                    <div class="mockup-card">
+                        <div class="mockup-header">
+                            <span class="mockup-date">2026년 5월 15일</span>
+                            <span class="mockup-greeting">안녕하세요 😊</span>
+                        </div>
+                        <h2 class="mockup-title">오늘의 기록</h2>
+
+                        <ul class="mockup-list">
+                            <li>
+                                <span class="mockup-icon" aria-hidden="true">💧</span>
+                                <span class="mockup-label">오늘의 부종</span>
+                                <span class="mockup-value status-normal">보통</span>
+                            </li>
+                            <li>
+                                <span class="mockup-icon" aria-hidden="true">🩹</span>
+                                <span class="mockup-label">압박 착용</span>
+                                <span class="mockup-value">8시간</span>
+                            </li>
+                            <li>
+                                <span class="mockup-icon" aria-hidden="true">🏃‍♀️</span>
+                                <span class="mockup-label">운동</span>
+                                <span class="mockup-value">스트레칭 20분</span>
+                            </li>
+                            <li>
+                                <span class="mockup-icon" aria-hidden="true">💚</span>
+                                <span class="mockup-label">마음 상태</span>
+                                <span class="mockup-value">괜찮아요</span>
+                            </li>
+                        </ul>
+
+                        <div class="mockup-footer">
+                            <span class="streak">🔥 7일 연속 기록 중</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 문제 제기 Section -->
+        <section class="section problem" aria-labelledby="problem-title">
+            <div class="container">
+                <header class="section-head">
+                    <h2 id="problem-title">림프부종 관리는 매일 필요하지만,<br>혼자 하기는 어렵습니다</h2>
+                </header>
+
+                <div class="card-grid grid-3">
+                    <article class="card problem-card">
+                        <div class="card-icon" aria-hidden="true">🤔</div>
+                        <h3>왜 부었는지 알기 어려움</h3>
+                        <p>수면, 식사, 활동량, 압박 착용 여부가 부종에 영향을 주지만 기록이 없으면 원인을 찾기 어렵습니다.</p>
+                    </article>
+                    <article class="card problem-card">
+                        <div class="card-icon" aria-hidden="true">📝</div>
+                        <h3>기록이 번거로움</h3>
+                        <p>줄자 측정, 운동, 압박, 진료 내용을 매일 따로 적는 것은 오래 지속하기 어렵습니다.</p>
+                    </article>
+                    <article class="card problem-card">
+                        <div class="card-icon" aria-hidden="true">🌧️</div>
+                        <h3>마음까지 지침</h3>
+                        <p>오래 관리해야 하는 질환이기 때문에 환자는 쉽게 외로움과 불안을 느낄 수 있습니다.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 오늘의 부종일기 입력 데모 -->
+        <section class="section record-section" id="record" aria-labelledby="record-title">
+            <div class="container">
+                <header class="section-head">
+                    <h2 id="record-title">오늘의 부종일기</h2>
+                    <p class="section-sub">하루 1분, 오늘의 나를 기록해보세요.</p>
+                </header>
+
+                <form class="card record-form" id="recordForm" novalidate>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="date">날짜</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="sleep">수면 시간 (시간)</label>
+                            <input type="number" id="sleep" name="sleep" min="0" max="24" step="0.5" placeholder="예: 7">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="water">수분 섭취량 (ml)</label>
+                            <input type="number" id="water" name="water" min="0" step="100" placeholder="예: 1500">
+                        </div>
+                        <div class="form-field">
+                            <label for="swelling">오늘의 부종</label>
+                            <select id="swelling" name="swelling">
+                                <option value="좋음">좋음</option>
+                                <option value="보통" selected>보통</option>
+                                <option value="심함">심함</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="stress">피로 · 스트레스</label>
+                            <select id="stress" name="stress">
+                                <option value="낮음">낮음</option>
+                                <option value="보통" selected>보통</option>
+                                <option value="높음">높음</option>
+                            </select>
+                        </div>
+                        <div class="form-field">
+                            <label for="exercise">운동</label>
+                            <input type="text" id="exercise" name="exercise" placeholder="예: 스트레칭 20분">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field form-field-full">
+                            <label for="compression">압박 · 붕대 착용 시간 (시간)</label>
+                            <input type="number" id="compression" name="compression" min="0" max="24" step="0.5" placeholder="예: 8">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field form-field-full">
+                            <label for="feeling">오늘 느낀 점</label>
+                            <textarea id="feeling" name="feeling" rows="4" placeholder="짧게 한 줄도 괜찮아요."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-large">기록 완료</button>
+                    </div>
+
+                    <div class="form-success" id="recordSuccess" role="status" aria-live="polite" hidden>
+                        <span class="success-icon" aria-hidden="true">✅</span>
+                        <p>오늘의 기록이 저장되었습니다.<br>내일의 나를 위한 좋은 관리입니다.</p>
+                    </div>
+
+                    <!-- AI 오늘 기록 정리 (기존 폼과 연결되는 보조 기능) -->
+                    <div class="form-ai-helper">
+                        <button type="button" class="btn btn-ghost btn-ai-small" id="summarizeTodayBtn">
+                            <span class="ai-chip" aria-hidden="true">AI</span>
+                            <span>AI가 오늘 기록 정리하기</span>
+                        </button>
+                        <div class="ai-result ai-result-inline" id="todaySummary" role="status" aria-live="polite" hidden>
+                            <div class="ai-result-head">
+                                <span class="ai-chip" aria-hidden="true">AI</span>
+                                <h4>오늘 기록 한눈에 보기</h4>
+                            </div>
+                            <p class="ai-result-text" id="todaySummaryText"></p>
+                            <p class="ai-disclaimer">
+                                AI 안내는 의료진의 진단과 치료를 대체하지 않습니다.
+                                증상이 심하거나 감염이 의심되면 반드시 의료진과 상담하세요.
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- 4. 관리 그래프 Section -->
+        <section class="section graph-section" id="graph" aria-labelledby="graph-title">
+            <div class="container">
+                <header class="section-head">
+                    <h2 id="graph-title">내 몸의 변화를 한눈에</h2>
+                    <p class="section-sub">최근 일주일간의 부종 정도 변화입니다.</p>
+                </header>
+
+                <div class="card graph-card">
+                    <div class="graph-legend" aria-hidden="true">
+                        <span class="legend-item"><span class="dot dot-good"></span>좋음</span>
+                        <span class="legend-item"><span class="dot dot-normal"></span>보통</span>
+                        <span class="legend-item"><span class="dot dot-bad"></span>심함</span>
+                    </div>
+
+                    <div class="chart" id="chart" role="img" aria-label="최근 일주일 부종 정도 막대 그래프">
+                        <!-- JS로 동적 생성 -->
+                    </div>
+
+                    <p class="graph-desc">
+                        기록이 쌓이면 어떤 날 부종이 심해지는지,<br>
+                        어떤 관리가 도움이 되는지 스스로 알아차릴 수 있습니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. 핵심 기능 Section -->
+        <section class="section features-section" id="features" aria-labelledby="features-title">
+            <div class="container">
+                <header class="section-head">
+                    <h2 id="features-title">나의 부종일기가 도와주는 것</h2>
+                </header>
+
+                <div class="card-grid grid-3">
+                    <article class="card feature-card">
+                        <div class="card-icon" aria-hidden="true">📅</div>
+                        <h3>매일 기록</h3>
+                        <p>수면, 수분, 운동, 압박, 부종 상태를 쉽게 기록</p>
+                    </article>
+                    <article class="card feature-card">
+                        <div class="card-icon" aria-hidden="true">📈</div>
+                        <h3>부종 측정 그래프</h3>
+                        <p>줄자 측정값이나 인바디 수치를 기간별로 확인</p>
+                    </article>
+                    <article class="card feature-card">
+                        <div class="card-icon" aria-hidden="true">🌟</div>
+                        <h3>출석과 응원</h3>
+                        <p>매일의 작은 실천을 이어가도록 응원</p>
+                    </article>
+                    <article class="card feature-card">
+                        <div class="card-icon" aria-hidden="true">🏥</div>
+                        <h3>진료기록 정리</h3>
+                        <p>병원 방문 목적, 의사 설명, 다음 계획을 정리</p>
+                    </article>
+                    <article class="card feature-card">
+                        <div class="card-icon" aria-hidden="true">🧘‍♀️</div>
+                        <h3>마음챙김</h3>
+                        <p>글을 길게 쓰기 힘든 날에도 짧게 마음을 돌볼 수 있도록 지원</p>
+                    </article>
+                    <article class="card feature-card">
+                        <div class="card-icon" aria-hidden="true">🎯</div>
+                        <h3>맞춤 정보</h3>
+                        <p>수술 유형과 관리 단계에 따라 필요한 정보를 구분</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI 도우미 소개 (앵커용 슬림 헤더) -->
+        <section class="section ai-intro" id="ai" aria-labelledby="ai-intro-title">
+            <div class="container">
+                <header class="section-head">
+                    <p class="eyebrow eyebrow-soft">AI 도우미</p>
+                    <h2 id="ai-intro-title">AI는 의료진을 대신하지 않습니다.<br>대신 곁에서 기록을 돕는 친구가 됩니다.</h2>
+                    <p class="section-sub">
+                        나의 부종일기의 AI는 진단이나 치료를 하지 않습니다.
+                        오늘의 기록을 정리하고, 마음을 다독이고, 정보를 쉽게 찾도록 돕습니다.
+                    </p>
+                </header>
+            </div>
+        </section>
+
+        <!-- AI 1. 마음챙김 -->
+        <section class="section ai-section ai-mind-section" aria-labelledby="ai-mind-title">
+            <div class="container">
+                <header class="section-head">
+                    <p class="eyebrow eyebrow-soft">AI 마음챙김</p>
+                    <h2 id="ai-mind-title">AI 마음챙김</h2>
+                    <p class="section-sub">
+                        글을 길게 쓰기 힘든 날에도, 오늘의 상태를 짧게 선택하면<br>
+                        AI가 나를 탓하지 않는 따뜻한 문장을 건네줍니다.
+                    </p>
+                </header>
+
+                <div class="card ai-card ai-mind-card">
+                    <fieldset class="mood-fieldset">
+                        <legend class="visually-hidden">오늘의 기분</legend>
+                        <p class="ai-card-label">오늘의 기분을 선택해보세요.</p>
+                        <div class="mood-options" id="moodOptions" role="radiogroup" aria-label="오늘의 기분">
+                            <button type="button" class="mood-btn" data-mood="괜찮아요" role="radio" aria-checked="false">
+                                <span class="mood-emoji" aria-hidden="true">🙂</span>
+                                <span>괜찮아요</span>
+                            </button>
+                            <button type="button" class="mood-btn" data-mood="지쳤어요" role="radio" aria-checked="false">
+                                <span class="mood-emoji" aria-hidden="true">😮‍💨</span>
+                                <span>지쳤어요</span>
+                            </button>
+                            <button type="button" class="mood-btn" data-mood="불안해요" role="radio" aria-checked="false">
+                                <span class="mood-emoji" aria-hidden="true">😟</span>
+                                <span>불안해요</span>
+                            </button>
+                            <button type="button" class="mood-btn" data-mood="뿌듯해요" role="radio" aria-checked="false">
+                                <span class="mood-emoji" aria-hidden="true">😊</span>
+                                <span>뿌듯해요</span>
+                            </button>
+                        </div>
+                    </fieldset>
+
+                    <div class="ai-action">
+                        <button type="button" class="btn btn-primary" id="aiMindBtn">
+                            <span class="ai-chip" aria-hidden="true">AI</span>
+                            <span>AI 위로 문장 받기</span>
+                        </button>
+                    </div>
+
+                    <div class="ai-result" id="aiMindResult" role="status" aria-live="polite" hidden>
+                        <div class="ai-result-head">
+                            <span class="ai-chip" aria-hidden="true">AI</span>
+                            <h4 id="aiMindResultTitle">AI의 따뜻한 한마디</h4>
+                        </div>
+                        <p class="ai-result-text" id="aiMindResultText"></p>
+                        <p class="ai-disclaimer">
+                            AI 안내는 의료진의 진단과 치료를 대체하지 않습니다.
+                            증상이 심하거나 감염이 의심되면 반드시 의료진과 상담하세요.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI 2. 기록 도우미 -->
+        <section class="section ai-section ai-helper-section" aria-labelledby="ai-helper-title">
+            <div class="container">
+                <header class="section-head">
+                    <p class="eyebrow eyebrow-soft">AI 기록 도우미</p>
+                    <h2 id="ai-helper-title">AI 기록 도우미</h2>
+                    <p class="section-sub">무엇을 써야 할지 막막할 때, AI가 오늘 기록을 정리할 질문을 제안합니다.</p>
+                </header>
+
+                <div class="card ai-card ai-helper-card">
+                    <div class="form-field form-field-full">
+                        <label for="aiHelperInput">오늘 한 일을 짧게 적어주세요.</label>
+                        <textarea
+                            id="aiHelperInput"
+                            rows="5"
+                            placeholder="예: 오늘 20분 걸었고, 압박스타킹을 6시간 착용했어요. 다리는 조금 무거웠어요."></textarea>
+                    </div>
+
+                    <div class="ai-action">
+                        <button type="button" class="btn btn-primary" id="aiHelperBtn">
+                            <span class="ai-chip" aria-hidden="true">AI</span>
+                            <span>기록 정리하기</span>
+                        </button>
+                    </div>
+
+                    <div class="ai-result" id="aiHelperResult" role="status" aria-live="polite" hidden>
+                        <div class="ai-result-head">
+                            <span class="ai-chip" aria-hidden="true">AI</span>
+                            <h4>오늘의 기록 요약</h4>
+                        </div>
+                        <ul class="ai-summary-list" id="aiHelperSummary"></ul>
+                        <p class="ai-note">
+                            이 기록은 다음 진료 때 내 몸 상태를 설명하는 데 도움이 될 수 있습니다.
+                        </p>
+                        <p class="ai-disclaimer">
+                            AI 안내는 의료진의 진단과 치료를 대체하지 않습니다.
+                            증상이 심하거나 감염이 의심되면 반드시 의료진과 상담하세요.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI 3. 관리 힌트 -->
+        <section class="section ai-section ai-hint-section" aria-labelledby="ai-hint-title">
+            <div class="container">
+                <header class="section-head">
+                    <p class="eyebrow eyebrow-soft">AI 관리 힌트</p>
+                    <h2 id="ai-hint-title">AI 관리 힌트</h2>
+                    <p class="section-sub">
+                        최근 기록을 바탕으로 생활 패턴을 돌아볼 수 있도록 도와줍니다.<br>
+                        단, 의료적 판단은 의료진과 함께해야 합니다.
+                    </p>
+                </header>
+
+                <div class="card-grid grid-3 ai-hint-grid">
+                    <article class="card ai-mini-card">
+                        <div class="card-icon" aria-hidden="true">🌙</div>
+                        <p>“수면 5시간 이하인 날 부종이 심하다고 기록됨”</p>
+                    </article>
+                    <article class="card ai-mini-card">
+                        <div class="card-icon" aria-hidden="true">🩹</div>
+                        <p>“압박 착용 시간이 짧은 날 다리 무거움이 기록됨”</p>
+                    </article>
+                    <article class="card ai-mini-card">
+                        <div class="card-icon" aria-hidden="true">🚶‍♀️</div>
+                        <p>“운동 후 부종이 완화되었다는 기록이 있음”</p>
+                    </article>
+                </div>
+
+                <div class="ai-action ai-action-center">
+                    <button type="button" class="btn btn-primary btn-large" id="aiHintBtn">
+                        <span class="ai-chip" aria-hidden="true">AI</span>
+                        <span>AI 힌트 보기</span>
+                    </button>
+                </div>
+
+                <div class="card ai-result ai-result-wide" id="aiHintResult" role="status" aria-live="polite" hidden>
+                    <div class="ai-result-head">
+                        <span class="ai-chip" aria-hidden="true">AI</span>
+                        <h4>AI 관리 힌트</h4>
+                    </div>
+                    <p class="ai-result-text" id="aiHintResultText"></p>
+                    <div class="ai-warning">
+                        <span class="ai-warning-icon" aria-hidden="true">⚠️</span>
+                        <p>
+                            통증, 열감, 붉어짐, 갑작스러운 부종 악화가 있다면 기록만 하지 말고
+                            의료진과 상담하세요.
+                        </p>
+                    </div>
+                    <p class="ai-disclaimer">
+                        AI 안내는 의료진의 진단과 치료를 대체하지 않습니다.
+                        증상이 심하거나 감염이 의심되면 반드시 의료진과 상담하세요.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI 4. 정보 안내 -->
+        <section class="section ai-section ai-info-section" aria-labelledby="ai-info-title">
+            <div class="container">
+                <header class="section-head">
+                    <p class="eyebrow eyebrow-soft">AI 정보 안내</p>
+                    <h2 id="ai-info-title">AI 정보 안내</h2>
+                    <p class="section-sub">림프부종 관리와 관련된 정보를 쉽게 찾아볼 수 있도록 돕습니다.</p>
+                </header>
+
+                <div class="card-grid grid-4 ai-info-grid" id="aiInfoGrid">
+                    <button type="button" class="card ai-info-card" data-info="compression">
+                        <div class="card-icon" aria-hidden="true">🩹</div>
+                        <h3>압박 관리</h3>
+                        <span class="ai-info-more">자세히 보기 →</span>
+                    </button>
+                    <button type="button" class="card ai-info-card" data-info="exercise">
+                        <div class="card-icon" aria-hidden="true">🧘‍♀️</div>
+                        <h3>운동과 스트레칭</h3>
+                        <span class="ai-info-more">자세히 보기 →</span>
+                    </button>
+                    <button type="button" class="card ai-info-card" data-info="cellulitis">
+                        <div class="card-icon" aria-hidden="true">🚨</div>
+                        <h3>봉와직염 주의 신호</h3>
+                        <span class="ai-info-more">자세히 보기 →</span>
+                    </button>
+                    <button type="button" class="card ai-info-card" data-info="visit">
+                        <div class="card-icon" aria-hidden="true">📋</div>
+                        <h3>진료 전 기록 준비</h3>
+                        <span class="ai-info-more">자세히 보기 →</span>
+                    </button>
+                </div>
+
+                <div class="card ai-result ai-result-wide" id="aiInfoResult" role="status" aria-live="polite" hidden>
+                    <div class="ai-result-head">
+                        <span class="ai-chip" aria-hidden="true">AI</span>
+                        <h4 id="aiInfoTitle">안내</h4>
+                    </div>
+                    <p class="ai-result-text" id="aiInfoText"></p>
+                    <p class="ai-disclaimer">
+                        AI 안내는 의료진의 진단과 치료를 대체하지 않습니다.
+                        증상이 심하거나 감염이 의심되면 반드시 의료진과 상담하세요.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. 마음챙김 Section -->
+        <section class="section mindful-section" aria-labelledby="mindful-title">
+            <div class="container">
+                <header class="section-head">
+                    <h2 id="mindful-title">몸의 기록과 함께 마음도 돌봅니다</h2>
+                </header>
+
+                <div class="card mindful-card">
+                    <p class="mindful-quote" id="mindfulQuote">
+                        “오늘 완벽하지 않아도 괜찮아요.<br>
+                        기록한 것만으로도 이미 나를 돌본 하루입니다.”
+                    </p>
+                    <button type="button" class="btn btn-primary" id="quoteBtn">
+                        응원 문장 받기
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. 커뮤니티 / 출석 Section -->
+        <section class="section community-section" id="community" aria-labelledby="community-title">
+            <div class="container">
+                <header class="section-head">
+                    <h2 id="community-title">가볍게 출석하고 서로 응원해요</h2>
+                    <p class="section-sub">한 줄이면 충분해요. 오늘의 작은 인사를 남겨보세요.</p>
+                </header>
+
+                <div class="community-wrap">
+                    <form class="card community-form" id="communityForm" novalidate>
+                        <div class="form-field">
+                            <label for="nickname">닉네임</label>
+                            <input type="text" id="nickname" name="nickname" maxlength="20" placeholder="예: 민트하늘" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="message">응원 한마디</label>
+                            <input type="text" id="message" name="message" maxlength="80" placeholder="오늘의 인사를 남겨주세요." required>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">출석하기</button>
+                        </div>
+                    </form>
+
+                    <ul class="community-list" id="communityList" aria-live="polite">
+                        <li class="community-item">
+                            <div class="community-meta">
+                                <span class="community-name">초록잎</span>
+                                <span class="community-time">오늘</span>
+                            </div>
+                            <p class="community-text">오늘도 붕대 착용 완료!</p>
+                        </li>
+                        <li class="community-item">
+                            <div class="community-meta">
+                                <span class="community-name">햇살가득</span>
+                                <span class="community-time">오늘</span>
+                            </div>
+                            <p class="community-text">20분 산책 다녀왔어요.</p>
+                        </li>
+                        <li class="community-item">
+                            <div class="community-meta">
+                                <span class="community-name">고요한바다</span>
+                                <span class="community-time">어제</span>
+                            </div>
+                            <p class="community-text">무리하지 않고 쉬는 것도 관리입니다.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 8. 푸터 -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <span class="logo-mark" aria-hidden="true">🌿</span>
+                <span class="logo-text">나의 부종일기</span>
+            </div>
+            <p class="footer-tagline">
+                나의 부종일기 — 림프부종 환자의 꾸준한 관리를 돕는 따뜻한 기록 서비스
+            </p>
+            <p class="footer-disclaimer">
+                본 서비스는 의료진의 진단과 치료를 대체하지 않으며, 자가관리 보조를 목적으로 합니다.
+            </p>
+            <p class="footer-copy">© 2026 나의 부종일기</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
