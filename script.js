@@ -29,6 +29,19 @@
         });
     }
 
+    /* ---------- 1-1. 모바일 햄버거: 항목 클릭 시 메뉴 닫기 ---------- */
+    function initMobileNav() {
+        const toggle = $('#navToggle');
+        const nav    = $('.site-nav');
+        if (!toggle || !nav) return;
+
+        $$('a', nav).forEach((link) => {
+            link.addEventListener('click', () => {
+                toggle.checked = false;
+            });
+        });
+    }
+
     /* ---------- 2. 기록 폼 ---------- */
     const STORAGE_KEY = 'budongDiary.records';
 
@@ -470,6 +483,7 @@
     /* ---------- 초기화 ---------- */
     document.addEventListener('DOMContentLoaded', () => {
         initScrollButtons();
+        initMobileNav();
         initRecordForm();
         renderChart();
         initQuoteButton();
